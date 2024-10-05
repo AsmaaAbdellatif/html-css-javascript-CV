@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+        <style>
+            html, body 
+            {
+            height: 100%; 
+            width: 100%;
+            margin: 0;
+            background-color: #f4f6dc;
+            
+            }
+            .dark{
+                background-color: #000;
+                forced-color-adjust: white;
+
+            }
+            .x
+            {
+                height: 30%;
+                width: 200px;
+                background-color: #d0be8f;
+            }
+            .y
+            {
+                height: 70%;
+                width: 200px;
+                background-color:#6a5d3e;
+            }
+            .image
+            {
+                margin:0px ;
+                padding: 0px;
+                box-sizing: border-box;
+
+            }
+            .circularimage
+            {
+                position: absolute; 
+                top: 22px;
+                left: 0;
+                border-radius: 50%; 
+                width:185px; 
+                height: 27.5%; 
+                object-fit: cover; 
+                padding: 4px;
+                margin: 4px;
+            }
+            h1
+            {
+            color: #6a5d3e;
+            background-color: #d0be8f;
+            font-family: cursive;
+            font-size:25px;
+            display: inline-block; 
+            position: relative; 
+            padding-left: 10px; 
+            margin-bottom: 20px;
+            }
+            h1::before
+            {
+            content: ""; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 5px;
+            background: #6a5d3e;
+            }
+            .div1{
+                display: flex;
+                flex-direction: row;
+            }
+            .identification
+            {
+                color:white ;
+                font-family: cursive;
+                font-size: 20px;
+                padding: 2px;
+                margin: 2px;
+                justify-content: center;
+            }
+            .edu1
+            {
+                
+                position: absolute;
+                top: 45px;
+                left:230px ;
+                margin-bottom: 20px;
+                
+            }
+            .edu2
+            {
+                color:#676c3b ;
+                font-family: cursive;
+                font-size: 20px;
+                position: absolute;
+                padding: 10px;
+                margin: 10px;
+                top: 45px;
+                left:210px ;
+                margin-top: 50px;
+                
+            }
+            .two
+            {
+                position: absolute;
+                top: 45px;
+                right:250px ;
+                margin-bottom: 20px;
+            }
+            .all
+            {
+                position: absolute;
+                padding: 10px;
+                margin: 10px;
+                top: 45px;
+                left:70% ;
+                margin-top: 85px;
+            }
+           .ooo
+            {
+                position: absolute;
+                padding: 10px;
+                margin: 10px;
+                bottom: 45px;
+                left:210px ;
+                margin-top: 50px;  
+            }
+            .hidden {
+                display: none;
+            }
+            /*
+            .one 
+            {
+            position: absolute;  
+            top: 0;              
+            left: 0;             
+            }
+            .two 
+            {
+        
+             top: 50%;
+            
+            
+            }
+            .three 
+            {
+             position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(-10px, 10px); 
+            }   
+            
+
+            a:visited
+            {
+                color: blue;
+            }*/
+            a:hover
+            {
+                padding-left: 30px;
+                color: #676c3b ;
+            }
+            .onecircle
+            {
+             width: 100px;              
+             height: 100px;              
+             background-color: #b8be86;  
+             color: #676c3b;               
+             border-radius: 50%;         
+             display: flex;              
+             justify-content: center;    
+             align-items: center;     
+             font-size: 30px;            
+             text-align: center;         
+            }
+            .twocircle
+            {
+             width: 100px;           
+             height: 100px;             
+             background-color: #b8be86;  
+             color: #676c3b;            
+             border-radius: 50%;        
+             display: flex;             
+             justify-content: center;   
+             align-items: center;        
+             font-size: 30px;            
+             text-align: center;         
+            }
+            .threecircle
+            {
+             width: 100px;               
+             height: 100px;              
+             background-color: #b8be86; 
+             color: #676c3b;              
+             border-radius: 50%;         
+             display: flex;             
+             justify-content: center;   
+             align-items: center;        
+             font-size: 30px;            
+             text-align: center;         
+            }
+            .fourcircle
+            {
+             width: 100px;  
+             height: 100px;             
+             background-color: #b8be86;  
+             color: #676c3b;               
+             border-radius: 50%;        
+             display: flex;              
+             justify-content: center;
+             align-items: center;        
+             font-size: 30px;            
+             text-align: center;         
+            }
+        </style>
+     </head>
+
+        <body>
+            <button id="quoteButton">Click for a random quote!</button>
+            <input type="text" id="email" placeholder="Enter your email">
+            <button id="submitButton">Submit</button>
+            <button id="themeSwitcher">Switch Theme</button>
+            
+
+            <script>
+
+                const quotes = [
+                    "The only way to do great work is to love what you do.",
+                ];
+                document.getElementById('quoteButton').addEventListener('click', () => {
+                    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+                    alert(randomQuote);
+                });
+
+            
+                document.getElementById('submitButton').addEventListener('click', (event) => {
+                    const email = document.getElementById('email').value;
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+                    if (!emailRegex.test(email)) {
+                        alert('Please enter a valid email address!');
+                        event.preventDefault(); 
+                    }
+                });
+
+
+     
+            </script>
+
+            <div class="dark">
+
+            </div>
+            <div class="x">
+            </div>
+            <div class="y">
+                <div class="div1">
+                </div>
+         
+            <div class="image">
+                <img src="aso0om.jpeg" class="circularimage">
+                <img src="mainpage.jpeg" class="circularimage">
+            </div>
+            <h1> ABOUT ME</h1><br>
+            <p class="identification"> I’m <strong>Asmaa Abdellatif</strong> years old palestinian from Jerusalem .
+                I am motivated professional with experience in hightech.
+                My goal is to contribute effectively and continue growing both personally and professionally.
+            </p>
+
+        </div>
+
+        <div>
+            <h1  class="edu1"> EDUCATION BACKGROUND</h1><br>
+            <button id="edu">hide</button>
+            <p class="edu2"> I studied at ALEMAN SCHOOL in JERUSALEM.<br>
+               After that I studied COMPUTER SYSTEMS<br> ENGINEERING at BIRZEIT UNIVERSITY in<br> RAMALLAH .
+               I am intersted in knowledge so I <br>joined JHF for web development learning .<br>
+             </p>
+        </div>
+
+        
+        <h1 class="two"> SOFTWARE SKILLS</h1><br>
+        <div class="all">
+            
+            <div class="onecircle">  c </div>
+            <div class="twocircle"> java </div>
+            <div class="threecircle">  html </div>
+            <div class="fourcircle">  css </div>
+        </div>
+        <div class="ooo">
+            <h1 class="three"> CONTACT</h1><br>
+            <a href="http://asmaa.younes.abdellatif@gmail.com" >
+                Email
+            <br>
+            </a>
+            <a href="https://www.linkedin.com/in/asma-a-abdellatif-6401b1305/">
+                Linkedin
+            <br>
+            </a>
+            <a href="https://github.com/AsmaaAbdellatif/AsmaaAbdellatif" >
+                github
+             <br>
+             </a>
+             <a href="https://www.facebook.com/profile.php?id=100049184132120&mibextid=LQQJ4d" >
+               Facebook 
+            <br> 
+            </a>
+        </div>
+        </body>
+        </html>
